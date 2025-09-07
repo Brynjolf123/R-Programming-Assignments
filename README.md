@@ -6,4 +6,4 @@
 
 #Repository for R Programming Assignments and Submissions
 
-# Here is the URL for my Blog as well: https://brynjolfjohnson.wordpress.com/
+# Here is the URL for my Blog: https://brynjolfjohnson.wordpress.com/
