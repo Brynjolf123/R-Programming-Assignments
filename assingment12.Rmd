@@ -1,0 +1,53 @@
+---
+title: "My R Markdown Primer"
+author: "Brynjolf Johnson"
+date: "2025-11-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+My Explanation: R Markdown is a powerful authoring framework that combines narrative text, code, and results into a single, reproducible document. It's built on top of Markdown syntax and integrates seamlessly with R, allowing data scientists and researchers to create dynamic reports where analysis code and its output are embedded directly alongside explanatory text. When you compile an R Markdown document, the code chunks execute automatically, ensuring your results always reflect the current state of your data and analysis.
+
+## LaTeX Math Equations
+R Markdown supports LaTeX for mathematical notation. For example, we can write inline math like the correlation coefficient formula: 
+$r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}}$
+
+The same can be done for a display equation. for instance, we can present the normal distribution probability density function:
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+
+## Executable Code Chunks
+
+Now we can enter in some libraries or data sets to exemplify how the code chunks work
+```{r}
+# Load in the ggplot2 library
+library(ggplot2)
+
+# Load in the mtcars data set
+data(mtcars)
+
+```
+
+## Visualization of mtcars
+
+Now we can show how visualizations work in R markdown files
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3)
+```
+## Concluding remarks
+
+Working with R Markdown fundamentally transforms the report-writing experience compared to traditional methods. With plain reports, I would typically run analyses in R or another statistical software, save outputs as image files or copy numbers into a Word document, and then write narrative text around these static results. This workflow is not only tedious but dangerous—if the data changes or I discover an error in my code, I must manually update every affected number, table, and figure throughout the document.
+
+Through the use of R markdown I no longer have to concern myself with these headaches.
+
